@@ -1,6 +1,6 @@
 # AGENTS.md · 项目规则
 
-> 📌 **文档基线**：2026-08-26（首次发布，commit 见本仓库首次提交）
+> 📌 **文档基线**：2026-11-18（commit `__SHA__`）接入 repo-kit 机器层（link-only / 规范 2.1.4）；前序 2026-08-26 首次发布
 > **更新文档/代码后，请更新此行**（日期 + 新 commit hash），并在 CHANGELOG 追加版本。
 
 只写代码/配置里看不出的信息；核心约束控制在短篇幅内，细节放 DEVELOPMENT.md。
@@ -27,6 +27,13 @@
 - 文档用中文；工作流 JSON 命名带规格后缀（`_1080p` / `_res1024_batch9`）。
 - 提示词类效果（Wan / LTX / MiniMax H3）属其他项目，此仓库不含推断/生成工作流，只做 SeedVR2 修复。
 - 部署目录默认 `C:\seedvr2-deploy\ComfyUI_windows_portable\`；仓库里保留工作流与说明，不放二进制权重。
+
+## 机器层（repo-kit · link-only）
+
+- `schema/taxonomy.json` + `schema/kit.lock.json`（kit `2.9.0` / 规范 `2.1.4` / `link-only`）+ `tools/repo-kit/check_repo.py`
+- 校验：`python tools/repo-kit/check_repo.py --root .`；锁哈希：`pwsh tools/update-repo-kit.ps1 -Check`
+- 只查**链接与锚点**：全仓 md 豁免 frontmatter（本仓没有 frontmatter 契约）
+- `schema/kit.lock.json` **不要手改**，升级只能跑 `tools/update-repo-kit.ps1`
 
 ## 常用命令
 

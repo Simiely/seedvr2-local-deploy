@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-11-18 · 文档维护：接入 repo-kit 机器层（link-only）
+
+- `schema/taxonomy.json` + `schema/kit.lock.json`（kit `2.9.0` / 规范 `2.1.4`）+ `tools/repo-kit/check_repo.py`
+- `.github/workflows/repo-check.yml`：md / `schema/**` / `tools/**` 变更时跑链接与锚点检查 + 锁哈希校验
+- 只改文档基建，不动产品代码；验收 `REPO CHECK: PASS`（ERROR=0、WARN=0）、`KIT LOCK: PASS`
+- 文档基线补上真实 commit 哈希（原「commit 见本仓库首次提交」无法用于断点续传）
+
 ## [0.1.0] 2026-08-26
 
 - 首次发布：SeedVR2-3B FP8 在 RTX 4070 Super（12GB）的本地部署方案。
